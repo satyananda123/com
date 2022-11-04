@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'FontAwesome';
+  color: #242405;
+  src: url(fonts/roboto-mono-v12-latin-regular.woff2) format('woff2'),
+       url(fonts/roboto-mono-v12-latin-regular.woff) format('woff'),
+       url(fonts/roboto-mono-v12-latin-regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  color: #242405;
+  src: url(fonts/roboto-mono-v12-latin-700italic.woff2) format('woff2'),
+       url(fonts/roboto-mono-v12-latin-700italic.woff) format('woff'),
+       url(fonts/roboto-mono-v12-latin-700italic.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+h1, p {
+  font-family: 'FontAwesome';
+  color: #242405;
+}
+
+h1 {
+  font-family: 'FontAwesome';
+  color: #242405;
+  font-weight: 700;
+  font-style: italic;
+}

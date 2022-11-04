@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'Roboto Mono', monospace;
+  src: url(fonts/roboto-mono-v12-latin-regular.woff2) format('woff2'),
+       url(fonts/roboto-mono-v12-latin-regular.woff) format('woff'),
+       url(fonts/roboto-mono-v12-latin-regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Mono', monospace;
+  src: url(fonts/roboto-mono-v12-latin-700italic.woff2) format('woff2'),
+       url(fonts/roboto-mono-v12-latin-700italic.woff) format('woff'),
+       url(fonts/roboto-mono-v12-latin-700italic.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+#grad {
+  background-image: radial-gradient(#260d1b, #071920, #201607);
+	 }
+h1, p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto Mono', monospace;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #0f0f0f;
+}
+.card
+{
+	position: relative;
+	width: 350px;
+	height: 190px;
+	background: #333;
+	transition: 0.5s;
+}
+.card:hover
+{
+	height: 450px;
+}
+.card .lines
+{
+	position: absolute;
+	inset: 0;
+	background: #000;
+	overflow: hidden;
+}
+.card .lines::before
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 600px;
+	height: 120px;
+	background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+	animation: animate 4s linear infinite;
+}
+@keyframes animate
+{
+	0%
+	{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100%
+	{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+}
+.card .lines::after
+{
+	content: '';
+	position: absolute;
+	inset: 3px;
+	background: #292929;
+}
+.card .imgBx
+{
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 150px;
+	height: 150px;
+	background: #000;
+	transition: 0.5s;
+	z-index: 10;
+	overflow: hidden;
+}
+.card:hover .imgBx
+{
+	width: 250px;
+	height: 250px;
+	}
+.card .imgBx::before
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 150px;
+	transform: translate(-50%,-50%);
+background: linear-gradient(#d30b3f,#d6d709,#d6d709,#d6d709,#d30b3f);
+animation: animate2 6s linear infinite;
+
+}
+@keyframes animate2
+{
+	0%
+	{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+	100%
+	{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+}
+.card .imgBx::after
+{
+	content: '';
+	position:absolute;
+	background: #292929;
+	inset:2px
+}
+.card .imgBx img
+{
+position: absolute;
+top: 7px;
+left: 7px;
+z-index: 1;
+width: calc(100% - 15px);
+height: calc(100% - 15px);
+filter: drop-shadow(5px 5px);
+}
+.card .content
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.card .content .details
+{
+	padding: 40px;
+	text-align: center;
+	width: 100%;
+	height: 60%;
+	transition: 0.5s;
+	transform: translateY(105px);
+}
+.card:hover .content .details
+{
+transform: translateY(opx);
+}
+.card .content .details h2
+{
+	font-size: 1.25em;
+font-weight: 600;
+color: #0eb1d2;
+line-height: 1.3em;
+}
+.card .content .details h2 span
+{
+font-size: 0.75em;
+font-weight: 500;
+color: #e2d111;
+}
+.card .content .details .data
+{
+	display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.card .content .details .data h3
+{
+	font-size: 1em;
+	color: #45ff4e;
+	line-height: 1.3em;
+	font-weight: 600;
+}
+.card .content .details .data h3 span
+{
+font-size: 0.85em;
+font-weight: 400;
+color: #d6e0e1;
+}
+.card .content .details .actionBtn
+{
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+.card .content .details .actionBtn button
+{
+	padding: 10px 30px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	font-size: 1em;
+	font-weight: 500;
+	background: #f00938;
+	color: #0b0a0a;
+	cursor: pointer;
+	opacity: 0.9;
+}
+.card .content .details .actionBtn button:nth-child(2)
+{
+	background: #499ed8;
+}
+.card .content .details .actionBtn button:hover
+{
+	opacity: 1;
+}
