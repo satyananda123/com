@@ -70,7 +70,7 @@
                                     <span class="tm-blue-text">Mailing Address</span><br>
                                  : Satyabhai khatrendar,<br>
                                     : Khatron ki khiladi(Sirf sapno me😁 Or real life me Decent Boy Satya🧘‍♂️🙋‍♂️🙍‍♂️🤵)<br><br>
-                                    Email: <a class="tm-blue-text" href="srisatyajiii123@gmail.com">srisatyajiii123@gmail.com</a><br>
+                                    Email: <a class="tm-blue-text" href="mailto:srisatyajiii123@gmail.com">srisatyajiii123@gmail.com</a><br>
                                     Tel No: <p>Number nahi dunga baat krna hai toh khud ki number mujhe mail krdo apun call back karega tereko</p><br>
                                     Instagram id: <a class="tm-black-text" href="https://instagram.com/satya_nanda123?igshid=YmMyMTA2M2Y=">satya_nanda123</a><br>
                                 </address>
@@ -94,10 +94,52 @@
     </div> <!-- container-fluid -->
 
     <!-- load JS files -->
-    <script src="js/jquery-1.11.3.min.js"></script>  
-    <modules>
-        <remove name="webDAVModule"/>
-    </modules>           <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/jquery-1.11.3.min.js">
+          <script>  
+
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(37.769725, -122.462154),
+                scrollwheel: false
+            };
+
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+              calculateCenter();
+          });
+
+            google.maps.event.addDomListener(window, 'resize', function() {
+              map.setCenter(center);
+          });
+        }
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        } 
+
+        $(document).ready(function(){           
+
+            // Google Map
+            loadGoogleMap();    
+
+            // Update the current year in copyright
+            $('.tm-current-year').text(new Date().getFullYear());        
+        });
+    </script>             <!-- jQuery (https://jquery.com/download/) -->
     
 </body>
 </html>
